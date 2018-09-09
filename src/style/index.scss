@@ -8,6 +8,7 @@
 .btn-primary {
 	background: rgba($accent-color, 0.2);
 	color: $accent-color;
+	border-radius: 4px;
 }
 .padding {
 	padding: 30px 0;
@@ -81,7 +82,7 @@
 }
 
 /*====================*/
-/* Dashboard Wrapper*/
+/* Dashboard Header*/
 /*====================*/
 .header {
 	padding: 14px 0;
@@ -125,4 +126,35 @@
 	position: absolute;
 	top: 0;
 	right: 0;
+}
+
+.updat-form__container {
+	max-width: 720px;
+	width: 100%;
+	background-color: #121c30;
+	padding: 30px;
+	box-shadow: 0 0 1px 1px rgba(#1a253c, 0.2);
+}
+.update-form {
+	legend {
+		font-size: 24px;
+		color: $text-color2;
+		font-weight: 300;
+		letter-spacing: 0.04em;
+	}
+	input {
+		height: 50px;
+	}
+	.form-control {
+		margin: 20px 0;
+		background-color: $heading-color;
+		color: $text-color;
+	}
+	.form-control::placeholder {
+		color: $text-color;
+	}
+	textarea {
+		resize: none;
+	}
+
 }

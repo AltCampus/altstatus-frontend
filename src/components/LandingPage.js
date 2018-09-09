@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import LoginSignup from './LoginSignup';
 
 
-class App extends Component {
+class LandingPage extends Component {
   render() {
     return (
       <div className="heading">
@@ -18,4 +18,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default LandingPage;

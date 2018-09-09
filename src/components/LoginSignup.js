@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class App extends Component {
+class LoginSignup extends Component {
   render() {
     return (
 			<div class="form-container col-md-6 col-md-offset-3">
@@ -23,4 +23,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default LoginSignup;
