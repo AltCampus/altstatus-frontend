@@ -13,7 +13,7 @@ class DailyUpdateForm extends Component {
 								<input type="url" className="form-control" id="" placeholder="Blog Url" />
 								<textarea type="text" className="form-control" rows="5" id="" placeholder="Reflection" />
 							</div>
-							<div class="text-right">
+							<div className="text-right">
 								<button type="submit" className="btn btn-primary">Post my update</button>
 							</div>
 						</form>
