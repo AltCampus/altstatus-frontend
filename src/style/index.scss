@@ -20,6 +20,7 @@
 .primary-wrapper {
 	background: $primary-color;
 	min-height: 100vh;
+	// height: 100%;
 }
 .brand {
 	font-size: 72px;
@@ -180,9 +181,15 @@
 		margin: 16px 0;
 		color: rgba($accent-color, 0.6);
 		font-weight: 300;
+		&:hover {
+			color: $accent-color;
+		}
 	}
 }
 .update-reflection {
+	background: #19253c;
+  padding: 16px;
+  border-radius: 4px;
 	p {
 		font-size: 18px;
 		color: #a0a4ae;

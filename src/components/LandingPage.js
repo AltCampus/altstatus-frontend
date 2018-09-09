@@ -11,7 +11,9 @@ class LandingPage extends Component {
 					<div className="container">
 						<h1 className="text-center brand">AltStatus</h1>
 						<h2 className="hero-tag"> For daily update join, a part<br /> of <span>AltCampus</span></h2>
-						{this.props.children || <SignupForm />}
+						<div className="clearfix">
+							{this.props.children || <SignupForm />}
+						</div>
 					</div>
 				</section>
       </div>
