@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import LandingPage from './LandingPage';
+
+import AuthWrapper from './AuthWrapper';
 import SignupForm from './SignupForm';
 
-class App extends Component {
-  render() {
-    return (
-			<LandingPage>
-				<SignupForm />
-			</LandingPage>
-    );
-  }
-}
+const Signup = (props) => {
+  return (
+    <AuthWrapper>
+      <SignupForm {...props} />
+    </AuthWrapper>
+  );
+};
 
-export default App;
+export default Signup;

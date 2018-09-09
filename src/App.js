@@ -1,14 +1,12 @@
 import React, { Component } from 'react';
-import LandingPage from './components/LandingPage';
+import AuthWrapper from './components/AuthWrapper';
 
-class App extends Component {
-  render() {
-    return (
-      <div>
-      	<LandingPage />
-      </div>
-    );
-  }
-}
+const App = () => {
+  return (
+    <div>
+      <AuthWrapper />
+    </div>
+  );
+};
 
 export default App;

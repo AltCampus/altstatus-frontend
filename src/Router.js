@@ -3,8 +3,8 @@ import PropTypes from 'prop-types'
 import { Provider } from 'react-redux'
 import { Switch, BrowserRouter as Router, Route } from 'react-router-dom'
 import App from './App'
-import Signup from './components/Signup';
-import Login from './components/Login'
+import Signup from './containers/Signup';
+import Login from './containers/Login'
 
 const Root = ({ store }) => (
   <Provider store={store}>
