@@ -22,4 +22,5 @@ class LandingPage extends Component {
 LandingPage.propTypes = {
 	children: PropTypes.element,
 }
+
 export default LandingPage;
