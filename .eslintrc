@@ -1,3 +1,6 @@
 {
-  "extends": "rallycoding",
+  "parser": "babel-eslint",
+  "extends": [
+    "plugin:react/recommended"
+]
 }
