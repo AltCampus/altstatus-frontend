@@ -5,3 +5,6 @@ export const CHANGE_SIGNUP_NAME = 'change_signup_name';
 export const CHANGE_SIGNUP_PASSWORD = 'change_signup_password';
 export const CHANGE_SIGNUP_BATCH = 'change_singup_batch';
 export const SET_POSTS = 'set_posts';
+export const CHANGE_POST_REFLECTION = 'change_post_reflection';
+export const CHANGE_POST_TWITTER_URL = 'change_post_twitter_url';
+export const CHANGE_POST_MEDIUM_URL = 'change_post_medium_url';
