@@ -128,12 +128,18 @@
 	right: 0;
 }
 
-.updat-form__container {
+/*====================*/
+/* Updat Form */
+/*====================*/
+
+.update-form__container {
 	max-width: 720px;
 	width: 100%;
 	background-color: #121c30;
 	padding: 30px;
 	box-shadow: 0 0 1px 1px rgba(#1a253c, 0.2);
+	border-radius: 4px;
+	margin: 0 auto;
 }
 .update-form {
 	legend {
@@ -156,5 +162,31 @@
 	textarea {
 		resize: none;
 	}
-
 }
+
+/*====================*/
+/* Update Post */
+/*====================*/
+.update-time {
+	display: flex;
+	align-items: center;
+	color: #aaa;
+	p {
+		margin-right: 10px;
+	}
+}
+.update-url {
+	a {
+		margin: 16px 0;
+		color: rgba($accent-color, 0.6);
+		font-weight: 300;
+	}
+}
+.update-reflection {
+	p {
+		font-size: 18px;
+		color: #a0a4ae;
+		line-height: 25.2px;
+	}
+}
+

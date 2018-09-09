@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
 import Header from './Header';
 import DailyUpdateForm from './DailyUpdateForm';
+import DailyUpdate from './DailyUpdate';
 
 class Dashboard extends Component {
   render() {
     return (
-			<div class="primary-wrapper">
+			<div className="primary-wrapper">
 				<Header />
 				<DailyUpdateForm />
+				<DailyUpdate />
+				<DailyUpdate />
 			</div>
     );
   }
