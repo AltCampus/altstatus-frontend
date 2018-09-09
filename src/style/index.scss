@@ -84,11 +84,45 @@
 /* Dashboard Wrapper*/
 /*====================*/
 .header {
-	padding: 20px 0;
+	padding: 14px 0;
+	background: rgba(16, 29, 53, 0.43);
+	border-bottom: 0.5px solid rgba(255, 255, 255, 0.4);
+}
+.navbar {
+	@extend %flex;
 }
 .nav {
 	@extend %flex;
 }
+.nav__brand {
+	font-size: 32px;
+	font-weight: 400;
+	color: $accent-color;
+	font-family: $font-family2;
+}
 .nav__item {
+	margin-left: 20px;
+	height: 30px;
+	width: 30px;
+	background-color: rgba($accent-color, 0.4);
 	@extend %flex;
+	justify-content: center;
+	border-radius: 50%;
+	cursor: pointer;
+	img {
+		width: 12px;
+	}
+}
+.notification-bell {
+	position: relative;
+	cursor: pointer;
+}
+.circle {
+	height: 8px;
+	width: 8px;
+	border-radius: 50%;
+	background-color: $accent-color;
+	position: absolute;
+	top: 0;
+	right: 0;
 }
