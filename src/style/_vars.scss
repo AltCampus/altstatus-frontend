@@ -1,0 +1,19 @@
+$primary-color: rgb(16, 29, 53);
+$accent-color: rgb(225,111,91);
+$font-family: 'Roboto', sans-serif;
+$font-family2: 'Sarina', cursive;
+$heading-color: #253146;
+$text-color2: #fff;
+$text-color: rgb(114,122,137);
+
+%flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
