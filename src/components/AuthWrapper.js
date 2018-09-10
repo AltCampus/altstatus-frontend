@@ -8,7 +8,7 @@ const AuthWrapper = (props) => {
 			<section className="primary-wrapper padding">
 				<div className="container">
 					<h1 className="text-center brand">AltStatus</h1>
-					<h2 className="hero-tag"> For daily update join, a part<br /> of <span>AltCampus</span></h2>
+					<h2 className="hero-tag">Daily Update for Students</h2>
 					{props.children || <SignupForm {...props} />}
 				</div>
 			</section>

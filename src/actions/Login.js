@@ -41,6 +41,7 @@ export const submitLogin = (history) => {
     })
     .then((result) => {
       if (result) {
+        localStorage.setItem('userInfo', JSON.stringify(result));
         history.push('/dashboard');
       }
     })

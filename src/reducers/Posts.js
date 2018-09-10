@@ -1,5 +1,6 @@
 import {
   SET_POSTS,
+  ADD_POST,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -13,6 +14,14 @@ const Posts = (state = INITIAL_STATE, action) => {
         ...state,
         posts: action.value,
       };
+    case ADD_POST:
+      return {
+        ...state,
+        posts: [
+          action.value,
+          ...state.posts,
+        ]
+      }
     default:
       return state;
   }

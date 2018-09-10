@@ -56,4 +56,4 @@ Login.propTypes = {
   history: PropTypes.object,
 };
 
-export default withRouter(Login);
+export default Login;

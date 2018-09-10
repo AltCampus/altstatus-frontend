@@ -10,3 +10,6 @@ export const CHANGE_POST_TWITTER_URL = 'change_post_twitter_url';
 export const CHANGE_POST_MEDIUM_URL = 'change_post_medium_url';
 export const CHANGE_SIGNUP_CONFIRM_PASSWORD = 'change_signup_confirm_password';
 export const SET_SIGNUP_ERROR = 'set_signup_error';
+export const SET_USER_INFO = 'set_user_info';
+export const ADD_POST = 'add_post';
+export const RESET_ADD_POST = 'reset_add_post';
