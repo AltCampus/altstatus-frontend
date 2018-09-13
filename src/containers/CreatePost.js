@@ -3,12 +3,12 @@ import DailyUpdateForm from '../components/DailyUpdateForm';
 import { changePostTwitterURL, changePostMediumURL, changePostReflection, submitPost } from '../actions';
 
 const mapStateToProps = (state) => {
-  const { twitterUrl, mediumUrl, reflection } = state.createPost;
-  console.log(twitterUrl, mediumUrl, reflection);
+  const { twitterUrl, mediumUrl, reflection, loading } = state.createPost;
   return {
     twitterUrl,
     mediumUrl,
     reflection,
+    loading,
   }
 }
 

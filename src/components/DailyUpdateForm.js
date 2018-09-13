@@ -1,9 +1,13 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+
+import Loading from './Loading';
 
 
 const DailyUpdateForm = (props) => {
-  const { twitterUrl, mediumUrl, reflection } = props;
+  const { twitterUrl, mediumUrl, reflection, loading } = props;
+  const disable = (!twitterUrl || !reflection) ? true : false;
+  const buttonStyl = disable ? { opacity: 0.4 } : { opacity: 1 };
 
   return (
     <div className="update-form padding">
@@ -45,7 +49,14 @@ const DailyUpdateForm = (props) => {
               />
             </div>
             <div className="text-right">
-              <button className="btn btn-primary" onClick={props.submitPost}>Post my update</button>
+              <button
+                className="btn btn-primary"
+                onClick={props.submitPost}
+                disabled={disable}
+                style={buttonStyl}
+              >
+                {loading ? <Loading /> : 'Post my update'}
+              </button>
             </div>
           </div>
         </div>
@@ -62,6 +73,7 @@ DailyUpdateForm.propTypes = {
   changeMediumUrl: PropTypes.func,
   submitPost: PropTypes.func,
   changeReflection: PropTypes.func,
+  loading: PropTypes.bool,
 };
 
 export default DailyUpdateForm;

@@ -51,10 +51,9 @@ export const setSignupError = (value) => {
 }
 
 export const submitSignup = (history) => {
-  console.log(history)
   return (dispatch, getState) => {
     const state = getState();
-    const { email, name, password, batch } = state.signup;
+    const { email, name, password } = state.signup;
 
     fetch(`${serverAPIBase}users/register`, {
       method: "POST",
@@ -72,7 +71,6 @@ export const submitSignup = (history) => {
       })
     })
     .then((res) => {
-      console.log(res.status);
       if (res.status === 201) {
         return res.json();
       }
@@ -85,7 +83,5 @@ export const submitSignup = (history) => {
         history.push('/login');
       }
     })
-
-    // dispatch()
   }
 }

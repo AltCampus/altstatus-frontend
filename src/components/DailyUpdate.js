@@ -1,5 +1,6 @@
-import React, { Component } from 'react';
+import React from 'react';
 import PropTypes from 'prop-types';
+import { formatDate, getTime } from '../utils';
 
 const DailyUpdate = (props) => {
   const { twitter_url, reflection, medium_url, timestamp } = props.post;
@@ -8,8 +9,8 @@ const DailyUpdate = (props) => {
       <div className="container">
         <div className="update-form__container">
           <div className="update-time">
-            <p>09 Sept 2018</p>
-            <time>at 17:30</time>
+            <p>{formatDate(timestamp)}</p>
+            <time>at {getTime(timestamp)}</time>
           </div>
           <div className="update-url">
             <a href={twitter_url}>{twitter_url}</a>

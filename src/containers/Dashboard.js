@@ -24,9 +24,9 @@ FetchPosts.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.posts.posts);
   return {
     posts: state.posts.posts,
+    loading: state.posts.loading,
   }
 };
 

@@ -7,7 +7,7 @@ import Signup from './containers/Signup';
 import Login from './containers/Login';
 import Dashboard from './containers/Dashboard';
 
-const checkIfLogin = (nextState, replace, callback) => {
+const checkIfLogin = () => {
   const userInfo = localStorage.getItem('userInfo');
 
   return userInfo

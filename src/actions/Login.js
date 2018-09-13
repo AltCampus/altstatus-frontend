@@ -36,7 +36,7 @@ export const submitLogin = (history) => {
         return res.json();
       }
 
-      dispatch(setSignupError('Please check your values'));
+      // dispatch(setSignupError('Please check your values'));
       return false;
     })
     .then((result) => {

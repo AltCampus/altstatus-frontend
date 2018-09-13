@@ -5,6 +5,7 @@ import {
   CHANGE_POST_MEDIUM_URL,
   ADD_POST,
   RESET_ADD_POST,
+  CREATING_POST,
 } from './types';
 
 export const changePostReflection = (value) => {
@@ -33,6 +34,12 @@ export const submitPost = () => {
     const state = getState();
     const { twitterUrl, mediumUrl, reflection } = state.createPost;
     const { id, token } = state.user;
+    
+    dispatch({
+      type: CREATING_POST,
+      value: true,
+    });
+
     fetch(`${serverAPIBase}submissions`, {
       method: 'POST',
       headers: {
@@ -52,6 +59,11 @@ export const submitPost = () => {
       if (res.status === 201) {
         return res.json();
       }
+
+      dispatch({
+        type: CREATING_POST,
+        value: false,
+      });
     })
     .then((result) => {
       dispatch({
@@ -60,6 +72,10 @@ export const submitPost = () => {
       });
       dispatch({
         type: RESET_ADD_POST,
+      });
+      dispatch({
+        type: CREATING_POST,
+        value: false,
       });
     })
   }

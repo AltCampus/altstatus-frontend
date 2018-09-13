@@ -1,10 +1,12 @@
 import {
   SET_POSTS,
   ADD_POST,
+  LOADING_POSTS,
 } from '../actions/types';
 
 const INITIAL_STATE = {
   posts: [],
+  loading: false,
 };
 
 const Posts = (state = INITIAL_STATE, action) => {
@@ -21,6 +23,11 @@ const Posts = (state = INITIAL_STATE, action) => {
           action.value,
           ...state.posts,
         ]
+      }
+    case LOADING_POSTS:
+      return {
+        ...state,
+        loading: action.value,
       }
     default:
       return state;
