@@ -15,3 +15,4 @@ export const ADD_POST = 'add_post';
 export const RESET_ADD_POST = 'reset_add_post';
 export const CREATING_POST = 'creating_post';
 export const LOADING_POSTS = 'loading_posts';
+export const RESET = 'reset';

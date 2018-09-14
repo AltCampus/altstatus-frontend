@@ -1,6 +1,7 @@
 import {
   CHANGE_LOGIN_EMAIL,
   CHANGE_LOGIN_PASSWORD,
+  RESET,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -20,6 +21,8 @@ const Login = (state = INITIAL_STATE, action) => {
         ...state,
         password: action.value,
       }
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }

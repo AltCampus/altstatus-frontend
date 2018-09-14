@@ -7,10 +7,10 @@ import DailyUpdate from './DailyUpdate';
 import Loading from './Loading';
 
 const Dashboard = (props) => {
-  const { posts, loading } = props;
+  const { posts, loading, history } = props;
   return (
     <div className="primary-wrapper">
-      <Header />
+      <Header history={history} logout={props.logout} />
       <DailyUpdateForm />
       {
         posts.map((post) => {
@@ -32,6 +32,8 @@ const Dashboard = (props) => {
 Dashboard.propTypes = {
   posts: PropTypes.array,
   loading: PropTypes.bool,
+  logout: PropTypes.func,
+  history: PropTypes.object,
 }
 
 export default Dashboard;

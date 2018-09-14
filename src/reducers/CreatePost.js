@@ -4,6 +4,7 @@ import {
   CHANGE_POST_MEDIUM_URL,
   CREATING_POST,
   RESET_ADD_POST,
+  RESET,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -36,6 +37,8 @@ const CreatePost = (state = INITIAL_STATE, action) => {
         loading: action.value,
       };
     case RESET_ADD_POST:
+      return INITIAL_STATE;
+    case RESET:
       return INITIAL_STATE;
     default:
       return state;

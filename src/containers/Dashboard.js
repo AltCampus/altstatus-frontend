@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import { setUserInfo, fetchPosts } from '../actions';
+import { setUserInfo, fetchPosts, logout } from '../actions';
 import DashboardView from '../components/Dashboard';
 
 class FetchPosts extends Component {
@@ -24,6 +24,7 @@ FetchPosts.propTypes = {
 };
 
 const mapStateToProps = (state) => {
+  console.log(state.user.token);
   return {
     posts: state.posts.posts,
     loading: state.posts.loading,
@@ -33,6 +34,7 @@ const mapStateToProps = (state) => {
 const Dashboard = connect(mapStateToProps, {
   setUserInfo,
   fetchPosts,
+  logout,
 })(FetchPosts);
 
 export default Dashboard;

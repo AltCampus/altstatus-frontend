@@ -168,3 +168,10 @@ button:focus{
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
+
+.logout-button {
+  padding: 5px 16px;
+  text-align: center;
+  margin-left: 21px;
+  font-size: 12px;
+}

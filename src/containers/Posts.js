@@ -1,7 +1,8 @@
 import { connect } from 'react-redux';
 import PostsView from '../components/Posts';
 
-const mapStateToProps = () => {
+const mapStateToProps = (state) => {
+  console.log(state.user);
   return {
     posts: state.posts.posts,
   };

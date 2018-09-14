@@ -4,6 +4,7 @@ import {
   CHANGE_SIGNUP_PASSWORD,
   CHANGE_SIGNUP_BATCH,
   CHANGE_SIGNUP_CONFIRM_PASSWORD,
+  RESET,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -41,6 +42,8 @@ const SignUp = (state = INITIAL_STATE, action) => {
         ...state,
         confirmPassword: action.value,
       }
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }

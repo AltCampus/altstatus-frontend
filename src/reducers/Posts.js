@@ -2,6 +2,7 @@ import {
   SET_POSTS,
   ADD_POST,
   LOADING_POSTS,
+  RESET,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -29,6 +30,8 @@ const Posts = (state = INITIAL_STATE, action) => {
         ...state,
         loading: action.value,
       }
+    case RESET:
+      return INITIAL_STATE;
     default:
       return state;
   }
