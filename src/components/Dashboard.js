@@ -5,12 +5,13 @@ import Header from './Header';
 import DailyUpdateForm from '../containers/CreatePost';
 import DailyUpdate from './DailyUpdate';
 import Loading from './Loading';
+import Message from './Message';
 
 const Dashboard = (props) => {
-  const { posts, loading, history } = props;
+  const { posts, loading } = props;
   return (
     <div className="primary-wrapper">
-      <Header history={history} logout={props.logout} />
+      <Header logout={props.logout} />
       <DailyUpdateForm />
       {
         posts.map((post) => {
@@ -25,6 +26,12 @@ const Dashboard = (props) => {
         :
         <div />
       }
+      {
+        !posts.length ?
+          <Message message="You have no posts." />
+        :
+        <div />
+      }
     </div>
   )
 }
@@ -33,7 +40,6 @@ Dashboard.propTypes = {
   posts: PropTypes.array,
   loading: PropTypes.bool,
   logout: PropTypes.func,
-  history: PropTypes.object,
 }
 
 export default Dashboard;

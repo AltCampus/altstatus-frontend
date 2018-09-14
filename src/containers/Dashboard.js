@@ -24,7 +24,6 @@ FetchPosts.propTypes = {
 };
 
 const mapStateToProps = (state) => {
-  console.log(state.user.token);
   return {
     posts: state.posts.posts,
     loading: state.posts.loading,

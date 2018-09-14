@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import { withRouter } from 'react-router-dom'
 
 const Header = (props) => {
 	const { history } = props;
-
 	return (
 		<header className="header">
 			<div className="container">
@@ -37,4 +37,4 @@ Header.propTypes = {
 	history: PropTypes.object,
 };
 
-export default Header;
+export default withRouter(Header);
