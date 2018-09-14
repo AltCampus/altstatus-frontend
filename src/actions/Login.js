@@ -45,7 +45,5 @@ export const submitLogin = (history) => {
         history.push('/dashboard');
       }
     })
-
-    // dispatch()
   }
 }

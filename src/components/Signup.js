@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 
 import AuthWrapper from './AuthWrapper';
 import SignupForm from './SignupForm';

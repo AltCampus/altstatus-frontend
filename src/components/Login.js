@@ -6,8 +6,8 @@ import AuthWrapper from './AuthWrapper';
 const Login = (props) => {
 	const { email, password } = props;
 	return (
-		<AuthWrapper>
-			<div className="form-container col-md-6 col-md-offset-3">
+		<AuthWrapper login>
+			<div className="form-container col-md-6 col-md-offset-3" style={{ float: 'none' }}>
 				<div className="form-group">
 					<div className="">
 						<input

@@ -188,3 +188,16 @@ button:focus{
   font-size: 21px;
   letter-spacing: 3px;
 }
+
+.login-link {
+  text-align: center;
+  font-weight: 200;
+  font-size: 1.3rem;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.login-link-cont {
+  padding-top: 15px;
+  color: white;
+}
