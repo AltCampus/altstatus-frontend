@@ -5,6 +5,8 @@ import {
   CHANGE_SIGNUP_BATCH,
   CHANGE_SIGNUP_CONFIRM_PASSWORD,
   RESET,
+  SET_SIGNUP_ERROR,
+  PROCESSING_SIGNUP,
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -13,6 +15,8 @@ const INITIAL_STATE = {
   password: '',
   batch: '',
   confirmPassword: '',
+  error: '',
+  loading: false,
 }
 
 const SignUp = (state = INITIAL_STATE, action) => {
@@ -42,6 +46,16 @@ const SignUp = (state = INITIAL_STATE, action) => {
         ...state,
         confirmPassword: action.value,
       }
+    case SET_SIGNUP_ERROR:
+      return {
+        ...state,
+        error: action.value,
+      };
+    case PROCESSING_SIGNUP:
+      return {
+        ...state,
+        loading: action.value,
+      };
     case RESET:
       return INITIAL_STATE;
     default:

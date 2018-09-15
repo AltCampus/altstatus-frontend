@@ -11,7 +11,7 @@ import {
 } from '../actions';
 
 const mapStateToProps = (state) => {
-  const { email, password, name, batch, confirmPassword } = state.signup;
+  const { email, password, name, batch, confirmPassword, loading, error, } = state.signup;
 
   return {
     name,
@@ -19,6 +19,8 @@ const mapStateToProps = (state) => {
     password,
     batch,
     confirmPassword,
+    error,
+    loading,
   }
 }
 

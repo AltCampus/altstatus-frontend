@@ -1,10 +1,15 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Loading from './Loading';
 
 import AuthWrapper from './AuthWrapper';
 
 const Login = (props) => {
-	const { email, password } = props;
+	const { email, password, loading, error } = props;
+	const buttonClasses = loading ? 'btn btn-primary center-elements' : 'btn btn-primary';
+	const disabled = (!email || !password) ? true : false;
+	const disableStyl = disabled ? { opacity: 0.4 } : { opacity: 1 };
+	
 	return (
 		<AuthWrapper login>
 			<div className="form-container col-md-6 col-md-offset-3" style={{ float: 'none' }}>
@@ -31,14 +36,21 @@ const Login = (props) => {
 							value={password}
 						/>
 					</div>
+					<div>
+						{
+							error ? <p className="auth-error">{error}</p> : <div />
+						}
+					</div>
 					<button
             type="submit"
-            className="btn btn-primary"
+            className={buttonClasses}
             onClick={() => {
               props.submitLogin(props.history)
-            }}
+						}}
+						disabled={disabled}
+						style={disableStyl}
           >
-            Submit
+            { loading ? <Loading /> : 'Submit' }
           </button>
 				</div>
 			</div>
@@ -52,7 +64,9 @@ Login.propTypes = {
 	changeEmail: PropTypes.func,
 	changePassword: PropTypes.func,
   submitLogin: PropTypes.func,
-  history: PropTypes.object,
+	history: PropTypes.object,
+	loading: PropTypes.bool,
+	error: PropTypes.string,
 };
 
 export default Login;

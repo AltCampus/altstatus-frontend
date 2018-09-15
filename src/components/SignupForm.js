@@ -2,8 +2,14 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { withRouter } from 'react-router-dom'
 
+import Loading from './Loading';
+
 const SignupForm = (props) => {
-  const { name, email, password, batch, confirmPassword, history } = props;
+  const { name, email, password, batch, confirmPassword, history, error, loading } = props;
+  const buttonClasses = loading ? 'btn btn-primary center-elements' : 'btn btn-primary';
+  const disabled = (!email || !password || !name) ? true : false;
+  const disableStyl = disabled ? { opacity: 0.4 } : { opacity: 1 };
+  
   return (
     <div className="form-container col-md-6 col-md-offset-3" style={{ float: 'none' }}>
       <div className="form-group">
@@ -60,13 +66,20 @@ const SignupForm = (props) => {
             <option value="Batch2">Batch2</option>
           </select>
         </div>
+        <div>
+          {
+            error ? <p className="auth-error">{error}</p> : <div />
+          }
+        </div>
         <button
-          className="btn btn-primary"
+          className={buttonClasses}
           onClick={() => {
             props.submitSignup(history)
           }}
+          disabled={disabled}
+          style={disableStyl}
         >
-          Submit
+          { loading ? <Loading /> : 'Submit' }
         </button>
       </div>
     </div>
@@ -86,6 +99,8 @@ SignupForm.propTypes = {
   batch: PropTypes.string,
   submitSignup: PropTypes.func,
   history: PropTypes.object,
+  error: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 export default withRouter(SignupForm);

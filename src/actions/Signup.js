@@ -6,40 +6,56 @@ import {
   CHANGE_SIGNUP_EMAIL,
   CHANGE_SIGNUP_CONFIRM_PASSWORD,
   SET_SIGNUP_ERROR,
+  PROCESSING_SIGNUP,
 } from './types';
 
 export const changeSignupName = (value) => {
-  return {
-    type: CHANGE_SIGNUP_NAME,
-    value,
+  return (dispatch) => {
+    dispatch(setSignupError(''));
+    dispatch({
+      type: CHANGE_SIGNUP_NAME,
+      value,
+    });
   };
 };
 
 export const changeSignupEmail = (value) => {
-  return {
-    type: CHANGE_SIGNUP_EMAIL,
-    value,
+  return (dispatch) => {
+    dispatch(setSignupError(''));
+    dispatch({
+      type: CHANGE_SIGNUP_EMAIL,
+      value,
+    });
   };
 };
 
 export const changeSignupPassword = (value) => {
-  return {
-    type: CHANGE_SIGNUP_PASSWORD,
-    value,
-  };
+  return (dispatch) => {
+    dispatch(setSignupError(''));
+    dispatch({
+      type: CHANGE_SIGNUP_PASSWORD,
+      value,
+    });
+  }
 };
 
 export const changeSignupBatch = (value) => {
-  return {
-    type: CHANGE_SIGNUP_BATCH,
-    value,
-  };
+  return (dispatch) => {
+    dispatch(setSignupError(''));
+    dispatch({
+      type: CHANGE_SIGNUP_BATCH,
+      value,
+    });
+  }
 };
 
 export const changeSignupConfirmPassword = (value) => {
-  return {
-    type: CHANGE_SIGNUP_CONFIRM_PASSWORD,
-    value,
+  return (dispatch) => {
+    dispatch(setSignupError());
+    dispatch({
+      type: CHANGE_SIGNUP_CONFIRM_PASSWORD,
+      value,
+    });
   };
 };
 
@@ -53,7 +69,19 @@ export const setSignupError = (value) => {
 export const submitSignup = (history) => {
   return (dispatch, getState) => {
     const state = getState();
-    const { email, name, password } = state.signup;
+    const { email, name, password, confirmPassword } = state.signup;
+    
+    dispatch(setSignupError(''));
+
+    if (password !== confirmPassword) {
+      dispatch(setSignupError('Confirm Password has to be same as password.'));
+      return;
+    }
+
+    dispatch({
+      type: PROCESSING_SIGNUP,
+      value: true,
+    });
 
     fetch(`${serverAPIBase}users/register`, {
       method: "POST",
@@ -75,13 +103,23 @@ export const submitSignup = (history) => {
         return res.json();
       }
 
-      dispatch(setSignupError('Please check your values'));
+      if (res.status === 422) {
+        dispatch(setSignupError('The email address is already taken.'));
+
+        return false
+      }
+
+      dispatch(setSignupError('Please check you input values.'));
       return false;
     })
     .then((result) => {
       if (result) {
         history.push('/login');
       }
+      dispatch({
+        type: PROCESSING_SIGNUP,
+        value: false,
+      })
     })
   }
 }

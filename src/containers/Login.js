@@ -3,14 +3,13 @@ import LoginView from '../components/Login';
 
 import { changeLoginEmail, changeLoginPassword, submitLogin } from '../actions';
 
-// Email, password,
-// Name, Email, password, batch
-
 const mapStateToProps = (state) => {
-  const { email, password } = state.login;
+  const { email, password, loading, error, } = state.login;
   return {
     email,
     password,
+    loading,
+    error,
   }
 }
 

@@ -201,3 +201,18 @@ button:focus{
   padding-top: 15px;
   color: white;
 }
+
+.auth-error {
+  padding-top: 12px;
+  color: white;
+  font-size: 13px;
+  padding-left: 10px;
+  letter-spacing: 1px;
+  font-weight: 200;
+}
+
+.center-elements {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
